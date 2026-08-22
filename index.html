@@ -2,392 +2,817 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Love 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A Special Surprise 💙</title>
 
 <style>
-*{box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+  width:100%;
+  min-height:100%;
+  overflow-x:hidden;
+}
+
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#03152f,#07518c,#dff7ff);
-color:#fff;
-min-height:100vh;
-overflow:hidden
+  font-family:Poppins,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(130,200,255,.18),transparent 30%),
+    radial-gradient(circle at 80% 80%,rgba(90,150,255,.18),transparent 35%),
+    linear-gradient(135deg,#06152f,#0a2d61 50%,#06152f);
 }
-.page{
-display:none;
-min-height:100vh;
-padding:25px;
-align-items:center;
-justify-content:center;
-text-align:center
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(255,255,255,.08),transparent 40%);
+  z-index:0;
 }
-.page.active{display:flex}
-.card{
-width:min(94%,650px);
-padding:30px 22px;
-border-radius:30px;
-background:rgba(255,255,255,.13);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.3);
-box-shadow:0 20px 60px rgba(0,0,0,.4);
-animation:enter .8s ease
+
+.screen{
+  min-height:100svh;
+  width:100%;
+  display:none;
+  position:relative;
+  z-index:1;
+  padding:28px 18px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  animation:fadeIn .9s ease;
 }
-@keyframes enter{
-from{opacity:0;transform:scale(.9) translateY(20px)}
-to{opacity:1;transform:scale(1) translateY(0)}
+
+.screen.active{display:flex}
+
+.container{
+  width:min(100%,700px);
+  margin:auto;
 }
-h1{font-size:clamp(32px,8vw,58px);margin:10px 0 20px}
-h2{font-size:clamp(27px,7vw,43px);margin:10px 0 18px}
-p{font-size:18px;line-height:1.7}
-button{
-border:0;
-padding:15px 26px;
-margin:10px 5px;
-border-radius:50px;
-background:#fff;
-color:#07518c;
-font-size:17px;
-font-weight:bold;
-box-shadow:0 8px 25px #0005;
-transition:.25s
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
 }
-button:active{transform:scale(.94)}
-.photo{
-width:min(90%,360px);
-height:430px;
-object-fit:cover;
-border-radius:25px;
-border:4px solid #fff;
-box-shadow:0 15px 45px #0007
-}
-.emoji{font-size:95px;margin:15px}
-.cake{font-size:100px}
-.confetti{
-position:fixed;
-top:-20px;
-font-size:25px;
-animation:fall 3s linear forwards
-}
-@keyframes fall{
-to{transform:translateY(110vh) rotate(720deg)}
-}
-.heart{
-position:fixed;
-bottom:-40px;
-font-size:25px;
-animation:float 5s linear infinite
-}
+
 @keyframes float{
-to{transform:translateY(-110vh) scale(1.5);opacity:0}
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
 }
-.monkey{
-font-size:110px;
-animation:dance .5s infinite alternate
+
+@keyframes glow{
+  0%,100%{box-shadow:0 0 20px rgba(130,205,255,.18)}
+  50%{box-shadow:0 0 45px rgba(130,205,255,.45)}
 }
-@keyframes dance{
-from{transform:rotate(-10deg)}
-to{transform:rotate(10deg) translateY(-12px)}
+
+@keyframes pop{
+  0%{transform:scale(.7);opacity:0}
+  80%{transform:scale(1.05)}
+  100%{transform:scale(1);opacity:1}
 }
+
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+h1,h2{
+  font-family:"Playfair Display",serif;
+}
+
+.script{
+  font-family:"Great Vibes",cursive;
+}
+
+.kicker{
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:11px;
+  color:#bfe7ff;
+  margin-bottom:15px;
+}
+
+.title{
+  font-size:clamp(35px,9vw,66px);
+  line-height:1.05;
+  text-shadow:0 8px 35px rgba(0,0,0,.35);
+}
+
+.subtitle{
+  margin:20px auto;
+  max-width:550px;
+  line-height:1.8;
+  color:#e5f4ff;
+  font-size:14px;
+}
+
+.glass{
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.045));
+  border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  border-radius:28px;
+  padding:30px 22px;
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.btn{
+  border:0;
+  outline:0;
+  cursor:pointer;
+  color:#06204a;
+  background:linear-gradient(135deg,#fff,#ccecff);
+  padding:15px 30px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14px;
+  box-shadow:0 12px 35px rgba(170,225,255,.25);
+  transition:.25s;
+}
+
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+
+.btn.secondary{
+  background:rgba(255,255,255,.09);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:none;
+}
+
+.music{
+  position:fixed;
+  right:15px;
+  top:15px;
+  z-index:50;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(0,20,55,.55);
+  color:#fff;
+  backdrop-filter:blur(12px);
+  cursor:pointer;
+}
+
+.orb{
+  width:170px;
+  height:170px;
+  margin:0 auto 28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:75px;
+  background:radial-gradient(circle,#dff7ff,#65bfff 45%,#164d9b);
+  box-shadow:0 0 80px rgba(90,190,255,.45);
+  animation:float 4s ease-in-out infinite,glow 3s infinite;
+}
+
+.cake{
+  position:relative;
+  width:220px;
+  height:210px;
+  margin:10px auto 25px;
+}
+
+.cake-body{
+  position:absolute;
+  bottom:10px;
+  left:15px;
+  width:190px;
+  height:105px;
+  border-radius:12px 12px 25px 25px;
+  background:linear-gradient(#fff,#dceeff);
+  box-shadow:0 18px 30px rgba(0,0,0,.25);
+}
+
+.cake-top{
+  position:absolute;
+  top:65px;
+  left:15px;
+  width:190px;
+  height:38px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 5px 0 #bfe7ff;
+}
+
+.candle{
+  position:absolute;
+  width:10px;
+  height:55px;
+  top:15px;
+  left:105px;
+  border-radius:5px;
+  background:repeating-linear-gradient(45deg,#fff 0 8px,#83cfff 8px 16px);
+}
+
+.flame{
+  position:absolute;
+  width:22px;
+  height:30px;
+  top:-27px;
+  left:-6px;
+  border-radius:50% 50% 50% 0;
+  background:#fff3a6;
+  transform:rotate(-45deg);
+  box-shadow:0 0 25px #ffe57c;
+  animation:float 1s infinite;
+}
+
+.flame.off{display:none}
+
+.character-row{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  margin:15px 0 25px;
+}
+
+.character{
+  width:115px;
+  height:115px;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:68px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+  animation:float 3.5s infinite;
+}
+
+.character:nth-child(2){animation-delay:.5s}
+
+.action-area{
+  position:relative;
+  min-height:95px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+#noBtn{
+  position:relative;
+}
+
+.photo-frame{
+  width:min(92vw,580px);
+  aspect-ratio:4/3;
+  margin:22px auto;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.3);
+  background:#081b3a;
+  box-shadow:0 25px 70px rgba(0,0,0,.4);
+}
+
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  animation:photoIn .8s ease;
+}
+
+@keyframes photoIn{
+  from{opacity:0;transform:scale(1.06)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  margin:14px;
+}
+
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:rgba(255,255,255,.3);
+}
+
+.dot.active{background:#fff;box-shadow:0 0 10px #fff}
+
+.message{
+  font-size:14px;
+  line-height:1.9;
+  color:#e8f6ff;
+  margin:18px auto;
+  max-width:580px;
+}
+
+.big-love{
+  font-size:clamp(44px,12vw,80px);
+  color:#fff;
+  text-shadow:0 0 35px rgba(150,220,255,.55);
+}
+
 .gift{
-font-size:110px;
-animation:bounce 1s infinite alternate
+  width:170px;
+  height:130px;
+  margin:25px auto;
+  position:relative;
+  cursor:pointer;
+  animation:float 3s infinite;
 }
-@keyframes bounce{to{transform:translateY(-15px)}}
-#noBtn{position:relative}
-.small{font-size:14px;opacity:.8}
+
+.gift-box{
+  position:absolute;
+  bottom:0;
+  left:20px;
+  width:130px;
+  height:95px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#fff,#9edcff);
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+.gift-lid{
+  position:absolute;
+  left:10px;
+  top:20px;
+  width:150px;
+  height:35px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#dff7ff,#76c7ff);
+}
+
+.ribbon-v{
+  position:absolute;
+  left:75px;
+  bottom:0;
+  width:20px;
+  height:95px;
+  background:#3b83cc;
+}
+
+.ribbon-h{
+  position:absolute;
+  left:10px;
+  top:20px;
+  width:150px;
+  height:15px;
+  background:#3b83cc;
+}
+
+.confetti{
+  position:fixed;
+  width:8px;
+  height:14px;
+  top:-20px;
+  z-index:100;
+  animation:fall linear forwards;
+}
+
+.final{
+  font-size:15px;
+  line-height:2;
+}
+
+.small{
+  font-size:12px;
+  color:#bcd8ef;
+}
+
+.hidden{display:none!important}
+
+@media(max-width:480px){
+  .screen{padding:20px 14px}
+  .glass{padding:25px 17px;border-radius:24px}
+  .character{width:105px;height:105px;font-size:60px}
+  .title{font-size:38px}
+}
 </style>
 </head>
 
 <body>
 
+<button class="music" id="musicBtn" aria-label="Music">♫</button>
+
 <!-- 1 -->
-<section class="page active" id="p1">
-<div class="card">
-<h1>A Special Surprise<br>Is Waiting For You... 💙</h1>
-<p>Something made specially for the most special person.</p>
-<button onclick="go(2)">Start Surprise ✨</button>
-</div>
+<section class="screen active" id="s1">
+  <div class="container">
+    <div class="orb">💙</div>
+    <div class="kicker">A little surprise for you</div>
+    <h1 class="title">A Special<br>Surprise Is Waiting For You...</h1>
+    <p class="subtitle">
+      Something made with love, little memories and a whole lot of feelings.
+      Take a deep breath and start the surprise. ✨
+    </p>
+    <button class="btn" onclick="startSurprise()">Start Surprise 💙</button>
+  </div>
 </section>
 
 <!-- 2 -->
-<section class="page" id="p2">
-<div class="card">
-<h2>Close Your Eyes... 🥹</h2>
-<p>Make A Wish...</p>
-<div class="emoji">🕯️✨</div>
-<p class="small">Take a deep breath and get ready...</p>
-<button onclick="go(3)">Make My Wish 💫</button>
-</div>
+<section class="screen" id="s2">
+  <div class="container glass">
+    <div class="kicker">Before we begin</div>
+    <h1 class="script" style="font-size:54px">Close Your Eyes...</h1>
+    <p class="message">Make a beautiful wish. 💫<br>Something from your heart.</p>
+
+    <div class="cake">
+      <div class="cake-top"></div>
+      <div class="cake-body"></div>
+      <div class="candle"><div class="flame" id="flame"></div></div>
+    </div>
+
+    <p class="small">Now blow the candle... 🎂</p>
+    <button class="btn" onclick="blowCandle()">Blow Candle 🕯️</button>
+  </div>
 </section>
 
 <!-- 3 -->
-<section class="page" id="p3">
-<div class="card">
-<h2>Here We Go... 💙</h2>
-<p>Guddo & Guddi are coming with a birthday surprise!</p>
-<div class="emoji">🧑🏻‍❤️‍🧑🏻</div>
-<div class="cake">🎂</div>
-<button onclick="go(4)">Let's Celebrate 🎉</button>
-</div>
+<section class="screen" id="s3">
+  <div class="container glass">
+    <div class="kicker">Birthday moment</div>
+    <div class="character-row">
+      <div class="character">👦🏻</div>
+      <div class="character">👧🏻</div>
+    </div>
+    <h1 class="script" style="font-size:55px">Happy Birthday! 🎉</h1>
+    <p class="message">Guddo is singing and celebrating with Guddi. 💙</p>
+    <button class="btn" onclick="next('s4')">Cut The Cake 🎂</button>
+  </div>
 </section>
 
 <!-- 4 -->
-<section class="page" id="p4">
-<div class="card">
-<h2>Make Your Wish 🕯️</h2>
-<p>Today, only Guddi will blow the candle. 🥰</p>
-<div class="emoji">👩🏻</div>
-<div class="cake">🎂🕯️</div>
-<button onclick="blow()">Blow Candle 💨</button>
-<p id="blowMsg"></p>
-</div>
+<section class="screen" id="s4">
+  <div class="container glass">
+    <div class="kicker">A sweet little moment</div>
+    <h1 class="title" style="font-size:40px">Cake Time 🎂</h1>
+    <div class="character-row">
+      <div class="character">👧🏻</div>
+      <div class="character">🍰</div>
+      <div class="character">👦🏻</div>
+    </div>
+    <p class="message">
+      Guddi cuts the cake... feeds Guddo...<br>
+      and then Guddo feeds Guddi. 🥹💙
+    </p>
+    <button class="btn" onclick="next('s5')">One More Surprise ✨</button>
+  </div>
 </section>
 
 <!-- 5 -->
-<section class="page" id="p5">
-<div class="card">
-<h1>HAPPY BIRTHDAY! 🎉</h1>
-<p>Guddo starts singing Happy Birthday and clapping!</p>
-<div class="emoji">🎂👏🎊</div>
-<p>✨💙✨🤍✨💙✨</p>
-<button onclick="go(6)">Cake Cut 🎂</button>
-</div>
+<section class="screen" id="s5">
+  <div class="container glass">
+    <div class="kicker">Something from my heart</div>
+    <div class="character-row">
+      <div class="character">👦🏻</div>
+      <div class="character">💐</div>
+      <div class="character">👧🏻</div>
+    </div>
+    <h1 class="script" style="font-size:55px">Will You Be Mine? 💍</h1>
+    <p class="message">
+      I don't need a perfect life.<br>
+      I just want a beautiful life with you.
+    </p>
+
+    <div class="action-area">
+      <button class="btn" onclick="sayYes()">YES 💙</button>
+      <button class="btn secondary" id="noBtn" onclick="moveNo()">NO 😶</button>
+    </div>
+    <p id="noMsg" class="small hidden">This button press is not allowed 😌</p>
+  </div>
 </section>
 
 <!-- 6 -->
-<section class="page" id="p6">
-<div class="card">
-<h2>Cake Cutting Time 🎂</h2>
-<div class="cake">🎂🔪</div>
-<p>Guddi cuts the cake... 🥰</p>
-<button onclick="go(7)">Next ❤️</button>
-</div>
+<section class="screen" id="s6">
+  <div class="container">
+    <div class="orb">🫂</div>
+    <h1 class="script" style="font-size:65px">I Love You 💙</h1>
+    <p class="message">
+      And yes... this is only the beginning of your surprise.
+    </p>
+    <button class="btn" onclick="next('s7')">Ready For The Next Page ✨</button>
+  </div>
 </section>
 
 <!-- 7 -->
-<section class="page" id="p7">
-<div class="card">
-<h2>First Bite 🥹❤️</h2>
-<p>Guddi feeds Guddo the cake...</p>
-<div class="emoji">👩🏻🍰👨🏻</div>
-<button onclick="go(8)">Next 💙</button>
-</div>
+<section class="screen" id="s7">
+  <div class="container">
+    <div class="kicker">Our little memories</div>
+    <h1 class="title" style="font-size:42px">Just Us 📸</h1>
+
+    <div class="photo-frame">
+      <img id="memoryImg" src="IMG-20250807-WA0075.jpg" alt="Our memory">
+    </div>
+
+    <div class="dots" id="dots"></div>
+    <p id="photoCaption" class="small">Every picture has a story. 💙</p>
+
+    <button class="btn" onclick="nextPhoto()">Next Memory →</button>
+  </div>
 </section>
 
 <!-- 8 -->
-<section class="page" id="p8">
-<div class="card">
-<h2>Now My Turn 😘</h2>
-<p>Guddo feeds Guddi the cake.</p>
-<div class="emoji">👨🏻🍰👩🏻</div>
-<p>Perfect moment. 💙</p>
-<button onclick="go(9)">Continue 🌹</button>
-</div>
+<section class="screen" id="s8">
+  <div class="container glass">
+    <div class="kicker">A tiny surprise</div>
+    <div style="font-size:90px;animation:float 3s infinite">🐒</div>
+    <h1 class="script" style="font-size:58px">Happy Birthday! 🥳</h1>
+    <p class="message">
+      Okay... this little monkey has something special for you. 😂💙
+    </p>
+    <button class="btn" onclick="next('s9')">Show Me 🎁</button>
+  </div>
 </section>
 
 <!-- 9 -->
-<section class="page" id="p9">
-<div class="card">
-<h2>Wait... 💐</h2>
-<p>Guddo has something important to ask...</p>
-<div class="emoji">💐</div>
-<button onclick="go(10)">Open My Heart ❤️</button>
-</div>
+<section class="screen" id="s9">
+  <div class="container glass">
+    <div class="kicker">For you</div>
+    <h1 class="title" style="font-size:40px">Something Special Inside</h1>
+
+    <div class="gift" onclick="openGift()">
+      <div class="gift-lid"></div>
+      <div class="gift-box"></div>
+      <div class="ribbon-v"></div>
+      <div class="ribbon-h"></div>
+    </div>
+
+    <button class="btn" onclick="openGift()">Open Gift 🎁</button>
+  </div>
 </section>
 
 <!-- 10 -->
-<section class="page" id="p10">
-<div class="card">
-<h2>Will You Be Mine Forever? 💍</h2>
-<p>One question. One answer. One forever. ❤️</p>
-<div class="emoji">💙</div>
-<button onclick="go(11)">YES ❤️</button>
-<button id="noBtn" onclick="runNo()">NO 😜</button>
-<p id="noMsg" class="small"></p>
-</div>
+<section class="screen" id="s10">
+  <div class="container glass">
+    <div class="kicker">A message for you</div>
+    <h1 class="script" style="font-size:55px">Hey Dikudaa... 💙</h1>
+
+    <p class="message final">
+      Happy Birthday my love. 💙🧿<br><br>
+      Tu mara mate badhu j che.<br>
+      Tne life ma badhu j male.<br>
+      Tara thi vadhare mara mate kai nathi.<br>
+      Tari khushi ae j Mari sachi khushi che. 🥹<br><br>
+      You are my peace.<br>
+      You are my everything.<br>
+      You are my forever. ♾️💙
+    </p>
+
+    <button class="btn" onclick="next('s11')">One Last Thing 💙</button>
+  </div>
 </section>
 
 <!-- 11 -->
-<section class="page" id="p11">
-<div class="card">
-<h1>YESSS! 🥹❤️</h1>
-<div class="emoji">🫂</div>
-<h2>I Love You 💙</h2>
-<p>They hug each other...</p>
-<p>Ready for the next page.</p>
-<button onclick="go(12)">Next ✨</button>
-</div>
-</section>
-
-<!-- 12 -->
-<section class="page" id="p12">
-<div class="card">
-<h2>Our Memories 📸</h2>
-<img id="slide" class="photo" src="IMG-20250807-WA0062.jpg">
-<p id="counter">1 / 6</p>
-<p id="caption">A beautiful memory... 💙</p>
-<button onclick="nextPhoto()">Next Memory ❤️</button>
-</div>
-</section>
-
-<!-- 13 -->
-<section class="page" id="p13">
-<div class="card">
-<h2>Six Memories... One Special Person 💙</h2>
-<p>Every picture has a story.</p>
-<div class="emoji">📸💙🧿</div>
-<button onclick="go(14)">One More Surprise 🎁</button>
-</div>
-</section>
-
-<!-- 14 -->
-<section class="page" id="p14">
-<div class="card">
-<h2>Surprise Wait... 🤫</h2>
-<p>Someone else came to wish you!</p>
-<div class="monkey">🐒</div>
-<button onclick="go(15)">Show Me 😂</button>
-</div>
-</section>
-
-<!-- 15 -->
-<section class="page" id="p15">
-<div class="card">
-<h1>Happy Birthday Dance! 🐒🎉</h1>
-<div class="monkey">🐒</div>
-<p>Even this little monkey wanted to celebrate with you! 😂💙</p>
-<button onclick="go(16)">What's Inside? 🎁</button>
-</div>
-</section>
-
-<!-- 16 -->
-<section class="page" id="p16">
-<div class="card">
-<h2>Something Special Inside 🎁</h2>
-<div class="gift">🎁</div>
-<button onclick="openGift()">Open Gift 💙</button>
-<p id="giftMsg"></p>
-</div>
-</section>
-
-<!-- 17 -->
-<section class="page" id="p17">
-<div class="card">
-<h2>Hey Dikudaa... 💙</h2>
-<p>
-Aaje taro special day che. ❤️<br><br>
-Mare bas etlu j kehvu che ke tu mara mate
-khub special che. Tari smile, tari happiness
-ane tari presence mara mate ghanu important che.
-<br><br>
-I hope life tane badhi happiness aape.
-Tari badhi wishes puri thay.
-<br><br>
-And no matter what happens,
-I will always wish to see you happy. 💙
-</p>
-<button onclick="go(18)">Last Surprise 💌</button>
-</div>
-</section>
-
-<!-- 18 -->
-<section class="page" id="p18">
-<div class="card">
-<h1>Happy Birthday My Love 💙🧿</h1>
-<p>
-Tu mara mate bdhu j che.<br>
-Tne life ma bdhu j mle.<br>
-Tara thi vadhare mara mate kai nthi.<br>
-Tari khushi ae j Mari sachi khushi che. ❤️
-</p>
-<br>
-<h2>You are my peace, my everything, forever. 💙</h2>
-<div class="emoji">💙🤍🧿❤️</div>
-<p>Forever & Always.</p>
-</div>
+<section class="screen" id="s11">
+  <div class="container">
+    <div class="orb">🧿</div>
+    <div class="kicker">The end... but not really</div>
+    <h1 class="script big-love">Happy Birthday<br>My Love 💙</h1>
+    <p class="message">
+      May every wish you make come true.<br>
+      And may I always be there to celebrate every one of them with you.
+    </p>
+    <p class="small">Forever & always. ♾️</p>
+  </div>
 </section>
 
 <script>
+/* =========================
+   SCREEN CONTROL
+========================= */
+function next(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
+/* =========================
+   SOFT BACKGROUND MUSIC
+   Starts only after user taps
+========================= */
+let audioCtx=null;
+let master=null;
+let musicTimer=null;
+let musicOn=false;
+
+function startMusic(){
+  if(audioCtx) return;
+
+  audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+  master=audioCtx.createGain();
+  master.gain.value=.055;
+  master.connect(audioCtx.destination);
+
+  const notes=[
+    [261.63,0],[329.63,.45],[392,.9],
+    [329.63,1.35],[293.66,1.8],
+    [329.63,2.25],[392,2.7],
+    [440,3.15],[392,3.6],
+    [329.63,4.05],[293.66,4.5],
+    [261.63,4.95]
+  ];
+
+  let start=audioCtx.currentTime+.1;
+
+  notes.forEach(([freq,time])=>{
+    const o=audioCtx.createOscillator();
+    const g=audioCtx.createGain();
+
+    o.type='sine';
+    o.frequency.value=freq;
+
+    g.gain.setValueAtTime(0,start+time);
+    g.gain.linearRampToValueAtTime(.12,start+time+.08);
+    g.gain.exponentialRampToValueAtTime(.001,start+time+.8);
+
+    o.connect(g);
+    g.connect(master);
+
+    o.start(start+time);
+    o.stop(start+time+.85);
+  });
+
+  musicTimer=setTimeout(()=>{
+    if(musicOn) restartMusic();
+  },5600);
+
+  musicOn=true;
+  document.getElementById('musicBtn').textContent='♫';
+}
+
+function restartMusic(){
+  clearTimeout(musicTimer);
+  if(!audioCtx || !musicOn) return;
+
+  const notes=[
+    261.63,329.63,392,329.63,
+    293.66,329.63,392,440,
+    392,329.63,293.66,261.63
+  ];
+
+  let start=audioCtx.currentTime+.05;
+
+  notes.forEach((freq,i)=>{
+    const o=audioCtx.createOscillator();
+    const g=audioCtx.createGain();
+
+    o.type='sine';
+    o.frequency.value=freq;
+
+    g.gain.setValueAtTime(0,start+i*.47);
+    g.gain.linearRampToValueAtTime(.11,start+i*.47+.06);
+    g.gain.exponentialRampToValueAtTime(.001,start+i*.47+.82);
+
+    o.connect(g);
+    g.connect(master);
+    o.start(start+i*.47);
+    o.stop(start+i*.47+.85);
+  });
+
+  musicTimer=setTimeout(restartMusic,5600);
+}
+
+document.getElementById('musicBtn').onclick=()=>{
+  if(!audioCtx){
+    startMusic();
+    return;
+  }
+
+  musicOn=!musicOn;
+
+  if(musicOn){
+    master.gain.value=.055;
+    restartMusic();
+    document.getElementById('musicBtn').textContent='♫';
+  }else{
+    master.gain.value=0;
+    clearTimeout(musicTimer);
+    document.getElementById('musicBtn').textContent='🔇';
+  }
+};
+
+function startSurprise(){
+  startMusic();
+  next('s2');
+}
+
+/* =========================
+   CANDLE
+========================= */
+function blowCandle(){
+  const flame=document.getElementById('flame');
+  flame.classList.add('off');
+  confetti();
+
+  setTimeout(()=>next('s3'),1300);
+}
+
+/* =========================
+   PROPOSAL
+========================= */
+function sayYes(){
+  confetti();
+  next('s6');
+}
+
+function moveNo(){
+  const b=document.getElementById('noBtn');
+  const area=b.parentElement;
+  const maxX=Math.max(70,area.clientWidth/2-50);
+  const x=(Math.random()*maxX*2)-maxX;
+  const y=(Math.random()*70)-35;
+
+  b.style.transform=`translate(${x}px,${y}px)`;
+  document.getElementById('noMsg').classList.remove('hidden');
+}
+
+/* =========================
+   PHOTOS
+========================= */
 const photos=[
-"IMG-20250807-WA0062.jpg",
-"IMG-20250807-WA0075.jpg",
-"IMG-20250807-WA0064.jpg",
-"IMG-20250807-WA0081.jpg",
-"IMG-20250807-WA0082.jpg",
-"IMG_20260215_005432.jpg"
+  'IMG-20250807-WA0075.jpg',
+  'IMG-20250807-WA0064.jpg',
+  'IMG-20250807-WA0081.jpg',
+  'IMG-20250807-WA0082.jpg',
+  'IMG_20260215_005432.jpg'
 ];
 
 let photoIndex=0;
 
-function go(n){
-document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
-document.getElementById("p"+n).classList.add("active");
-window.scrollTo(0,0);
+function renderDots(){
+  const d=document.getElementById('dots');
+  d.innerHTML='';
+  photos.forEach((_,i)=>{
+    const x=document.createElement('span');
+    x.className='dot '+(i===photoIndex?'active':'');
+    d.appendChild(x);
+  });
 }
 
-function blow(){
-document.getElementById("blowMsg").innerHTML="💨✨ Guddi blew the candle!";
-confetti();
-setTimeout(()=>go(5),1400);
-}
-
-function confetti(){
-for(let i=0;i<35;i++){
-let c=document.createElement("div");
-c.className="confetti";
-c.innerHTML=["🎉","✨","💙","🤍","🎊"][Math.floor(Math.random()*5)];
-c.style.left=Math.random()*100+"vw";
-c.style.animationDelay=Math.random()*1+"s";
-document.body.appendChild(c);
-setTimeout(()=>c.remove(),4000);
-}
-}
-
-function runNo(){
-let b=document.getElementById("noBtn");
-b.style.position="fixed";
-b.style.left=Math.random()*70+"vw";
-b.style.top=Math.random()*70+"vh";
-document.getElementById("noMsg").innerText=
-"This button press is not allowed 😜❤️";
-}
+renderDots();
 
 function nextPhoto(){
-photoIndex++;
+  photoIndex++;
 
-if(photoIndex>=photos.length){
-go(13);
-return;
+  if(photoIndex>=photos.length){
+    next('s8');
+    return;
+  }
+
+  const img=document.getElementById('memoryImg');
+  img.style.opacity=0;
+
+  setTimeout(()=>{
+    img.src=photos[photoIndex];
+    img.style.opacity=1;
+    renderDots();
+  },250);
 }
 
-document.getElementById("slide").src=photos[photoIndex];
-document.getElementById("counter").innerText=(photoIndex+1)+" / 6";
-
-let captions=[
-"A beautiful memory... 💙",
-"Another precious moment... 🤍",
-"Memories that stay forever... 🧿",
-"One smile, a thousand feelings... ❤️",
-"Together makes everything better... 💙",
-"My favourite memories with you... 🥹"
-];
-
-document.getElementById("caption").innerText=captions[photoIndex];
-}
-
+/* =========================
+   GIFT
+========================= */
 function openGift(){
-document.getElementById("giftMsg").innerHTML=
-"Inside this gift is a lifetime of love, happiness and beautiful memories. 💙🥹✨";
-
-confetti();
-
-setTimeout(()=>go(17),1800);
+  confetti();
+  setTimeout(()=>next('s10'),900);
 }
 
+/* =========================
+   CONFETTI
+========================= */
+function confetti(){
+  const symbols=['✦','✧','❄','💙','🤍','✨'];
+
+  for(let i=0;i<55;i++){
+    const c=document.createElement('div');
+    c.className='confetti';
+    c.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+
+    c.style.left=Math.random()*100+'vw';
+    c.style.fontSize=(10+Math.random()*14)+'px';
+    c.style.animationDuration=(2.2+Math.random()*2.5)+'s';
+    c.style.animationDelay=(Math.random()*.5)+'s';
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>c.remove(),5500);
+  }
+}
+
+/* =========================
+   SMALL CINEMATIC TOUCH
+========================= */
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden && master){
+    master.gain.value=0;
+  }else if(!document.hidden && master && musicOn){
+    master.gain.value=.055;
+  }
+});
 </script>
 
 </body>
-</html>
+  </html>
