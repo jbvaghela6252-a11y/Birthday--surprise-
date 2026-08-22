@@ -3,96 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Special Surprise 💙</title>
+<title>Happy Birthday My Love 💙</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 body{
-  font-family:Arial,sans-serif;
-  background:linear-gradient(135deg,#061b3a,#0b4f8a,#dff4ff);
-  color:white;
-  min-height:100vh;
-  overflow-x:hidden;
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#03152f,#07518c,#dff7ff);
+color:#fff;
+min-height:100vh;
+overflow:hidden
 }
 .page{
-  min-height:100vh;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:25px;
-  position:relative;
+display:none;
+min-height:100vh;
+padding:25px;
+align-items:center;
+justify-content:center;
+text-align:center
 }
 .page.active{display:flex}
 .card{
-  width:min(92%,650px);
-  padding:35px 22px;
-  border-radius:30px;
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(15px);
-  border:1px solid rgba(255,255,255,.3);
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
+width:min(94%,650px);
+padding:30px 22px;
+border-radius:30px;
+background:rgba(255,255,255,.13);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.3);
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+animation:enter .8s ease
 }
-h1{font-size:clamp(32px,8vw,58px);margin-bottom:18px}
-h2{font-size:clamp(27px,7vw,42px);margin-bottom:18px}
+@keyframes enter{
+from{opacity:0;transform:scale(.9) translateY(20px)}
+to{opacity:1;transform:scale(1) translateY(0)}
+}
+h1{font-size:clamp(32px,8vw,58px);margin:10px 0 20px}
+h2{font-size:clamp(27px,7vw,43px);margin:10px 0 18px}
 p{font-size:18px;line-height:1.7}
 button{
-  border:0;
-  padding:15px 28px;
-  border-radius:50px;
-  margin:12px 6px;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  background:white;
-  color:#07518c;
-  box-shadow:0 8px 25px rgba(0,0,0,.25);
+border:0;
+padding:15px 26px;
+margin:10px 5px;
+border-radius:50px;
+background:#fff;
+color:#07518c;
+font-size:17px;
+font-weight:bold;
+box-shadow:0 8px 25px #0005;
+transition:.25s
 }
-button:hover{transform:scale(1.05)}
+button:active{transform:scale(.94)}
 .photo{
-  width:min(90%,330px);
-  max-height:430px;
-  object-fit:cover;
-  border-radius:25px;
-  border:4px solid rgba(255,255,255,.8);
-  box-shadow:0 15px 45px rgba(0,0,0,.4);
-  margin:20px auto;
+width:min(90%,360px);
+height:430px;
+object-fit:cover;
+border-radius:25px;
+border:4px solid #fff;
+box-shadow:0 15px 45px #0007
+}
+.emoji{font-size:95px;margin:15px}
+.cake{font-size:100px}
+.confetti{
+position:fixed;
+top:-20px;
+font-size:25px;
+animation:fall 3s linear forwards
+}
+@keyframes fall{
+to{transform:translateY(110vh) rotate(720deg)}
 }
 .heart{
-  position:fixed;
-  animation:float 5s linear infinite;
-  opacity:.8;
+position:fixed;
+bottom:-40px;
+font-size:25px;
+animation:float 5s linear infinite
 }
 @keyframes float{
-  from{transform:translateY(100vh) scale(.6);opacity:0}
-  30%{opacity:1}
-  to{transform:translateY(-15vh) scale(1.2);opacity:0}
+to{transform:translateY(-110vh) scale(1.5);opacity:0}
 }
-.cake{font-size:100px;margin:15px}
-.monkey{font-size:110px;animation:dance .7s infinite alternate}
+.monkey{
+font-size:110px;
+animation:dance .5s infinite alternate
+}
 @keyframes dance{
-  from{transform:rotate(-8deg) translateY(0)}
-  to{transform:rotate(8deg) translateY(-15px)}
+from{transform:rotate(-10deg)}
+to{transform:rotate(10deg) translateY(-12px)}
 }
-.gift{font-size:110px;animation:bounce 1s infinite alternate}
+.gift{
+font-size:110px;
+animation:bounce 1s infinite alternate
+}
 @keyframes bounce{to{transform:translateY(-15px)}}
 #noBtn{position:relative}
-.small{font-size:14px;opacity:.8;margin-top:15px}
+.small{font-size:14px;opacity:.8}
 </style>
 </head>
 
 <body>
 
-<div class="heart" style="left:10%">💙</div>
-<div class="heart" style="left:80%;animation-delay:2s">🤍</div>
-<div class="heart" style="left:45%;animation-delay:3s">💙</div>
-
 <!-- 1 -->
 <section class="page active" id="p1">
 <div class="card">
 <h1>A Special Surprise<br>Is Waiting For You... 💙</h1>
-<p>Something made specially for you.</p>
-<button onclick="next(2)">Start Surprise ✨</button>
+<p>Something made specially for the most special person.</p>
+<button onclick="go(2)">Start Surprise ✨</button>
 </div>
 </section>
 
@@ -100,205 +115,278 @@ button:hover{transform:scale(1.05)}
 <section class="page" id="p2">
 <div class="card">
 <h2>Close Your Eyes... 🥹</h2>
-<p>Make a beautiful wish before we begin...</p>
-<div class="cake">🎂</div>
-<button onclick="next(3)">Make My Wish 💫</button>
+<p>Make A Wish...</p>
+<div class="emoji">🕯️✨</div>
+<p class="small">Take a deep breath and get ready...</p>
+<button onclick="go(3)">Make My Wish 💫</button>
 </div>
 </section>
 
 <!-- 3 -->
 <section class="page" id="p3">
 <div class="card">
-<h2>Happy Birthday, My Love 💙</h2>
-<p>Today is all about you.</p>
-<img class="photo" src="IMG-20250807-WA0062.jpg" alt="Our Memory">
-<button onclick="next(4)">Continue ❤️</button>
+<h2>Here We Go... 💙</h2>
+<p>Guddo & Guddi are coming with a birthday surprise!</p>
+<div class="emoji">🧑🏻‍❤️‍🧑🏻</div>
+<div class="cake">🎂</div>
+<button onclick="go(4)">Let's Celebrate 🎉</button>
 </div>
 </section>
 
 <!-- 4 -->
 <section class="page" id="p4">
 <div class="card">
-<h2>Guddo & Guddi 🎂</h2>
-<p>Guddo brought something special...</p>
-<div style="font-size:80px">🧑🏻‍❤️‍🧑🏻</div>
-<div class="cake">🎂</div>
-<p>It's time to make a wish!</p>
-<button onclick="blow()">Blow Candle 🕯️</button>
-<div id="candleText"></div>
+<h2>Make Your Wish 🕯️</h2>
+<p>Today, only Guddi will blow the candle. 🥰</p>
+<div class="emoji">👩🏻</div>
+<div class="cake">🎂🕯️</div>
+<button onclick="blow()">Blow Candle 💨</button>
+<p id="blowMsg"></p>
 </div>
 </section>
 
 <!-- 5 -->
 <section class="page" id="p5">
 <div class="card">
-<h2>Make A Wish! ✨</h2>
-<p>Only Guddi gets to blow the candle today. 🥰</p>
-<div class="cake" id="cake">🎂🕯️</div>
-<button onclick="blow()">Blow Candle 💨</button>
-<p id="blown"></p>
+<h1>HAPPY BIRTHDAY! 🎉</h1>
+<p>Guddo starts singing Happy Birthday and clapping!</p>
+<div class="emoji">🎂👏🎊</div>
+<p>✨💙✨🤍✨💙✨</p>
+<button onclick="go(6)">Cake Cut 🎂</button>
 </div>
 </section>
 
 <!-- 6 -->
 <section class="page" id="p6">
 <div class="card">
-<h2>Yayyy! 🎉</h2>
-<p>The candle is gone!</p>
-<p style="font-size:55px">🎂 👏 🎊 ✨</p>
-<p>Now let's cut the cake together.</p>
-<button onclick="next(7)">Cake Cut 🎂</button>
+<h2>Cake Cutting Time 🎂</h2>
+<div class="cake">🎂🔪</div>
+<p>Guddi cuts the cake... 🥰</p>
+<button onclick="go(7)">Next ❤️</button>
 </div>
 </section>
 
 <!-- 7 -->
 <section class="page" id="p7">
 <div class="card">
-<h2>Cake Cutting 💙</h2>
-<div class="cake">🎂🔪</div>
-<p>Guddi cuts the cake...</p>
-<p>Then feeds Guddo 🥹❤️</p>
-<p>And Guddo feeds Guddi 😘</p>
-<button onclick="next(8)">Next Surprise 💐</button>
+<h2>First Bite 🥹❤️</h2>
+<p>Guddi feeds Guddo the cake...</p>
+<div class="emoji">👩🏻🍰👨🏻</div>
+<button onclick="go(8)">Next 💙</button>
 </div>
 </section>
 
 <!-- 8 -->
 <section class="page" id="p8">
 <div class="card">
-<h2>Wait... There's More 🌹</h2>
-<p>Guddo has something to ask...</p>
-<div style="font-size:90px">💐</div>
-<button onclick="next(9)">Open My Heart ❤️</button>
+<h2>Now My Turn 😘</h2>
+<p>Guddo feeds Guddi the cake.</p>
+<div class="emoji">👨🏻🍰👩🏻</div>
+<p>Perfect moment. 💙</p>
+<button onclick="go(9)">Continue 🌹</button>
 </div>
 </section>
 
 <!-- 9 -->
 <section class="page" id="p9">
 <div class="card">
-<h2>Will You Be Mine Forever? 💍</h2>
-<p>Choose carefully... 😏</p>
-<button onclick="yes()">YES ❤️</button>
-<button id="noBtn" onclick="nope()">NO 😜</button>
-<p id="noText" class="small"></p>
+<h2>Wait... 💐</h2>
+<p>Guddo has something important to ask...</p>
+<div class="emoji">💐</div>
+<button onclick="go(10)">Open My Heart ❤️</button>
 </div>
 </section>
 
 <!-- 10 -->
 <section class="page" id="p10">
 <div class="card">
-<h1>YESSS! ❤️🥹</h1>
-<p>They hug each other...</p>
-<div style="font-size:90px">🫂💙</div>
-<h2>I Love You ❤️</h2>
-<p>Ready for the next page...</p>
-<button onclick="next(11)">Next ✨</button>
+<h2>Will You Be Mine Forever? 💍</h2>
+<p>One question. One answer. One forever. ❤️</p>
+<div class="emoji">💙</div>
+<button onclick="go(11)">YES ❤️</button>
+<button id="noBtn" onclick="runNo()">NO 😜</button>
+<p id="noMsg" class="small"></p>
 </div>
 </section>
 
 <!-- 11 -->
 <section class="page" id="p11">
 <div class="card">
-<h2>Our Little Memory 📸</h2>
-<img class="photo" src="IMG-20250807-WA0062.jpg" alt="Memory">
-<p>One photo today...</p>
-<p>But a lifetime of memories ahead. 💙</p>
-<button onclick="next(12)">Continue ✨</button>
+<h1>YESSS! 🥹❤️</h1>
+<div class="emoji">🫂</div>
+<h2>I Love You 💙</h2>
+<p>They hug each other...</p>
+<p>Ready for the next page.</p>
+<button onclick="go(12)">Next ✨</button>
 </div>
 </section>
 
 <!-- 12 -->
 <section class="page" id="p12">
 <div class="card">
-<h2>Surprise Wait... 🤫</h2>
-<p>Something cute is coming...</p>
-<div class="monkey">🐒</div>
-<button onclick="next(13)">Show Me 😂</button>
+<h2>Our Memories 📸</h2>
+<img id="slide" class="photo" src="IMG-20250807-WA0062.jpg">
+<p id="counter">1 / 6</p>
+<p id="caption">A beautiful memory... 💙</p>
+<button onclick="nextPhoto()">Next Memory ❤️</button>
 </div>
 </section>
 
 <!-- 13 -->
 <section class="page" id="p13">
 <div class="card">
-<h2>Happy Birthday Dance! 🐒🎉</h2>
-<div class="monkey">🐒</div>
-<p>Even the monkey came to celebrate your birthday! 😂💙</p>
-<button onclick="next(14)">What's That? 🎁</button>
+<h2>Six Memories... One Special Person 💙</h2>
+<p>Every picture has a story.</p>
+<div class="emoji">📸💙🧿</div>
+<button onclick="go(14)">One More Surprise 🎁</button>
 </div>
 </section>
 
 <!-- 14 -->
 <section class="page" id="p14">
 <div class="card">
-<h2>Something Special Inside 🎁</h2>
-<div class="gift">🎁</div>
-<button onclick="openGift()">Open Gift 💙</button>
-<p id="giftText"></p>
+<h2>Surprise Wait... 🤫</h2>
+<p>Someone else came to wish you!</p>
+<div class="monkey">🐒</div>
+<button onclick="go(15)">Show Me 😂</button>
 </div>
 </section>
 
 <!-- 15 -->
 <section class="page" id="p15">
 <div class="card">
-<h2>Hey Dikudaa... 💙</h2>
-<p>
-Aaje taro special day che.<br><br>
-Mare bas etlu j kehvu che ke tu mara mate
-khub special che. Tari smile, tari happiness
-ane tari presence mara mate ghanu important che. ❤️
-<br><br>
-I hope life tane badhi happiness aape.
-</p>
-<button onclick="next(16)">One Last Thing 💌</button>
+<h1>Happy Birthday Dance! 🐒🎉</h1>
+<div class="monkey">🐒</div>
+<p>Even this little monkey wanted to celebrate with you! 😂💙</p>
+<button onclick="go(16)">What's Inside? 🎁</button>
 </div>
 </section>
 
 <!-- 16 -->
 <section class="page" id="p16">
 <div class="card">
+<h2>Something Special Inside 🎁</h2>
+<div class="gift">🎁</div>
+<button onclick="openGift()">Open Gift 💙</button>
+<p id="giftMsg"></p>
+</div>
+</section>
+
+<!-- 17 -->
+<section class="page" id="p17">
+<div class="card">
+<h2>Hey Dikudaa... 💙</h2>
+<p>
+Aaje taro special day che. ❤️<br><br>
+Mare bas etlu j kehvu che ke tu mara mate
+khub special che. Tari smile, tari happiness
+ane tari presence mara mate ghanu important che.
+<br><br>
+I hope life tane badhi happiness aape.
+Tari badhi wishes puri thay.
+<br><br>
+And no matter what happens,
+I will always wish to see you happy. 💙
+</p>
+<button onclick="go(18)">Last Surprise 💌</button>
+</div>
+</section>
+
+<!-- 18 -->
+<section class="page" id="p18">
+<div class="card">
 <h1>Happy Birthday My Love 💙🧿</h1>
 <p>
-Tu mara mate badhu j che.<br>
-Tne life ma badhu j male.<br>
-Tara thi vadhare mara mate kai nathi.<br>
+Tu mara mate bdhu j che.<br>
+Tne life ma bdhu j mle.<br>
+Tara thi vadhare mara mate kai nthi.<br>
 Tari khushi ae j Mari sachi khushi che. ❤️
-<br><br>
-<strong>You are my peace, my everything, forever. 💙</strong>
 </p>
-<div style="font-size:55px;margin:20px">💙🤍🧿❤️</div>
+<br>
+<h2>You are my peace, my everything, forever. 💙</h2>
+<div class="emoji">💙🤍🧿❤️</div>
 <p>Forever & Always.</p>
 </div>
 </section>
 
 <script>
-function next(n){
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- document.getElementById('p'+n).classList.add('active');
- window.scrollTo(0,0);
+
+const photos=[
+"IMG-20250807-WA0062.jpg",
+"IMG-20250807-WA0075.jpg",
+"IMG-20250807-WA0064.jpg",
+"IMG-20250807-WA0081.jpg",
+"IMG-20250807-WA0082.jpg",
+"IMG_20260215_005432.jpg"
+];
+
+let photoIndex=0;
+
+function go(n){
+document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+document.getElementById("p"+n).classList.add("active");
+window.scrollTo(0,0);
 }
 
 function blow(){
- document.getElementById('candleText').innerHTML="💨✨ Candle blown!";
- document.getElementById('blown').innerHTML="💨✨ Guddi blew the candle! Happy Birthday! 🎉";
- setTimeout(()=>next(6),1200);
+document.getElementById("blowMsg").innerHTML="💨✨ Guddi blew the candle!";
+confetti();
+setTimeout(()=>go(5),1400);
 }
 
-function nope(){
- const b=document.getElementById('noBtn');
- b.style.position='absolute';
- b.style.left=Math.random()*65+'%';
- b.style.top=Math.random()*65+'%';
- document.getElementById('noText').innerText=
- "This button press is not allowed 😜❤️";
+function confetti(){
+for(let i=0;i<35;i++){
+let c=document.createElement("div");
+c.className="confetti";
+c.innerHTML=["🎉","✨","💙","🤍","🎊"][Math.floor(Math.random()*5)];
+c.style.left=Math.random()*100+"vw";
+c.style.animationDelay=Math.random()*1+"s";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),4000);
+}
 }
 
-function yes(){next(10)}
+function runNo(){
+let b=document.getElementById("noBtn");
+b.style.position="fixed";
+b.style.left=Math.random()*70+"vw";
+b.style.top=Math.random()*70+"vh";
+document.getElementById("noMsg").innerText=
+"This button press is not allowed 😜❤️";
+}
+
+function nextPhoto(){
+photoIndex++;
+
+if(photoIndex>=photos.length){
+go(13);
+return;
+}
+
+document.getElementById("slide").src=photos[photoIndex];
+document.getElementById("counter").innerText=(photoIndex+1)+" / 6";
+
+let captions=[
+"A beautiful memory... 💙",
+"Another precious moment... 🤍",
+"Memories that stay forever... 🧿",
+"One smile, a thousand feelings... ❤️",
+"Together makes everything better... 💙",
+"My favourite memories with you... 🥹"
+];
+
+document.getElementById("caption").innerText=captions[photoIndex];
+}
 
 function openGift(){
- document.getElementById('giftText').innerHTML=
- "Inside the gift is all my love for you. 💙🥹✨";
- setTimeout(()=>next(15),1800);
+document.getElementById("giftMsg").innerHTML=
+"Inside this gift is a lifetime of love, happiness and beautiful memories. 💙🥹✨";
+
+confetti();
+
+setTimeout(()=>go(17),1800);
 }
+
 </script>
 
 </body>
